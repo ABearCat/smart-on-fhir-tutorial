@@ -54,7 +54,8 @@
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
           p.height = getQuantityValueAndUnit(height[0]);
-
+          p.weight = getQuantityValueAndUnit(weight[0]);
+          p.bmi = parseInt(calculateBmi(p.height, p.weight));
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
           }
@@ -86,6 +87,8 @@
       birthdate: {value: ''},
       age: {value: ''},
       height: {value: ''},
+      weight: {value: ''},
+      bmi: {value: ''},
       systolicbp: {value: ''},
       diastolicbp: {value: ''},
       ldl: {value: ''},
@@ -129,6 +132,11 @@
     else {
       return undefined;
     }
+  }
+
+  function calculateBmi(height, weight){  //Weight in kg divided by height in meters squared
+    var hsquared = height * height;
+    return weight/hsquared;
   }
 
   function getQuantityValueAndUnit(ob) {
