@@ -170,10 +170,12 @@
     $('#height').html(p.height);
     $('#weight').html(p.weight);
     $('#bmi').html(p.bmi);
+    $('#heartrate').html(p.heartrate);
     $('#systolicbp').html(p.systolicbp);
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#crfurl').html(p.crfurl);   
   };
 
 })(window);
