@@ -40,7 +40,7 @@
             fname = patient.name[0].given.join(' ');
             lname = patient.name[0].family.join(' ');
           }
-
+          //if using height as an example, 34565-2, 55418-8, 67795-5, 74728-8, 85353-1 all contain height information
           var height = byCodes('8302-2');
           var weight = byCodes('3141-9');
           var heartrate = byCodes('8867-4');
@@ -48,6 +48,7 @@
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          var crfurl = 'https://ocform3.mystudy.me/preview/::YYBD?d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_SYSTOLIC]='+systolicbp+'&d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_DIASTOLIC]='+diastolicbp;        
 
           var p = defaultPatient();
           p.birthdate = dobStr;
@@ -68,6 +69,11 @@
           p.heartrate = getQuantityValueAndUnit(heartrate[0]);
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
+
+          p.crfurl = crfurl;
+          //'https://ocform3.mystudy.me/preview/::YYBD?d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_HEIGHT]='+p.height;
+          //9999&d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_WEIGHT]=9999&d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_SYSTOLIC]=120&d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_DIASTOLIC]=80
+
 
           ret.resolve(p);
         });
