@@ -43,6 +43,7 @@
 
           var height = byCodes('8302-2');
           var weight = byCodes('3141-9');
+          var heartrate = byCodes('8867-4');
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
@@ -64,7 +65,7 @@
           if (typeof diastolicbp != 'undefined') {
             p.diastolicbp = diastolicbp;
           }
-
+          p.heartrate = getQuantityValueAndUnit(heartrate[0]);
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
@@ -90,6 +91,7 @@
       height: {value: ''},
       weight: {value: ''},
       bmi: {value: ''},
+      heartrate: {value: ''},
       systolicbp: {value: ''},
       diastolicbp: {value: ''},
       ldl: {value: ''},
