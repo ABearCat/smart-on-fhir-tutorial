@@ -49,12 +49,13 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           
-          console.log('Item: ', height);
-          console.log('Item: ', weight);
+          //console.log('Item: ', height);
+          //console.log('Item: ', weight);
           //console.log('Item: '. calculateBmi(height, weight));
           console.log('Item: ', systolicbp);
           console.log('Item: ', diastolicbp);
-          var crfurl = 'https://ocform3.mystudy.me/preview/::YYBD?d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_SYSTOLIC]='+systolicbp+'&d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_DIASTOLIC]='+diastolicbp+'&d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_HEIGHT]='+height;
+          var crfurl = 'https://ocform3.mystudy.me/preview/::YYBD?d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_SYSTOLIC]='+systolicbp+'&d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_DIASTOLIC]='+diastolicbp;
+          //+'&d[/F_PHYSICALEXAM_ENGLISH/IG_PHYSI_UNGROUPED/I_PHYSI_HEIGHT]='+height
 
           var p = defaultPatient();
           p.birthdate = dobStr;
