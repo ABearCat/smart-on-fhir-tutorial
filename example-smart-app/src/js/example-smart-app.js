@@ -49,7 +49,7 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           
-          //console.log('Item: ', height);
+          console.log('Item: ', height);
           //console.log('Item: ', weight);
           //console.log('Item: '. calculateBmi(height, weight));
           console.log('Item: ', systolicbp);
